@@ -1,0 +1,3 @@
+#データベースは保存しない
+db/*.db
+node_modules/

@@ -1,0 +1,148 @@
+/* 日付 */
+.daily-date {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.daily-wrapper {
+  background-color: #f8f5e9;  /* アイボリー */
+  padding: 32px;
+  border-radius: 24px;
+
+  width: fit-content;
+  margin: 40px auto;  /* ← ページ中央 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ボックスを横並び */
+.daily-box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 0px;
+    justify-content: center;  /* ← これ追加 */
+}
+/* 共通ボックス */
+.daily-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  border: 4px solid black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* 色バリエーション */
+.box-white {
+  background-color: white;
+  border: none;
+}
+
+.box-blue {
+  background-color: #9ddbe6;
+  border: none;
+}
+
+.box-yellow {
+  background-color: #fff2aa;
+  border: none;
+}
+
+.box-red {
+  background-color: #ffcccc;
+  border: none;
+}
+
+.diary-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 12px;
+  background: #fafafa;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: sans-serif;
+}
+
+.diary-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.diary-form label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.diary-form textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* 色タブ */
+.color-tabs {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.color-tabs input[type="radio"] {
+  display: none;
+}
+
+.color-tabs .tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #eee;
+  font-size: 14px;
+}
+
+.color-tabs .tab:not(:last-child) {
+  border-right: none;
+}
+
+.tab.red { color: #c0392b; }
+.tab.blue { color: #2980b9; }
+.tab.green { color: #ffffcc; }
+
+#red:checked + .red {
+  background: #f8d7da;
+  border-color: #c0392b;
+}
+
+#blue:checked + .blue {
+  background: #d6eaf8;
+  border-color: #2980b9;
+}
+
+#green:checked + .green {
+  background: #fff2aa;
+  border-color: #fff000;
+}
+
+.diary-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.diary-form button:hover {
+  background: #555;
+}

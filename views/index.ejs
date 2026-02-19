@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>top page</title>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+    <style>
+        body { margin: 40px; font-family: sans-serif; }
+        #calendar { max-width: 900px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <div id="calendar"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const calendarEl = document.getElementById('calendar');
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          locale: 'ja', // 日本語化
+          // 自分のサーバーのAPIから予定を取得
+          events: '/api/events' ,
+          // 日付部分をクリックした時の処理
+          dateClick: function(info) {
+          // info.dateStr には "2026-02-17" のような文字列が入っています
+          const selectedDate = info.dateStr;
+        
+          // 指定したURLへ遷移
+          window.location.href = '/daily/' + selectedDate;
+          }
+        });
+        calendar.render();
+      });
+    </script>
+</body>
+</html>

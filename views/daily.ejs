@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= date %> の日記</title>
+    <link rel="stylesheet" href="/stylesheets/daily.css">
+</head>
+<body>
+<%if (istoday) {%>
+<form class="diary-form" action="/daily" method="POST">
+  <h2>どんな気持ちか選ぼう</h2>
+  <!-- 感情色（タブ選択） -->
+  <div class="color-tabs">
+    <input type="radio" id="red" name="color" value="red" required>
+    <label for="red" class="tab red">いらいら</label>
+
+    <input type="radio" id="blue" name="color" value="blue">
+    <label for="blue" class="tab blue">かなしい</label>
+
+    <input type="radio" id="green" name="color" value="yellow">
+    <label for="green" class="tab green">うれしい</label>
+  </div>
+  <h2>なにがあった？</h2>
+  <!-- メモ -->
+  <label>
+    <textarea name="memo" rows="4" placeholder="今日のことを書こう"></textarea>
+  </label>
+
+  <button type="submit">保存</button>
+</form>
+ <p class = "daily-wrapper"> <%= date %> の記録</p>
+<% } else { %>
+  <p class = "daily-wrapper"> <%= date %> の記録</p>
+<% } %>
+
+<!-- フォームここまで -->
+</form>
+<div class="daily-box-container">
+  <% memos.forEach(m => { %>
+
+    <% if (m.color === 'red') { %>
+      <div class="daily-box box-red">
+        <%= m.memo %>
+      </div>
+
+    <% } else if (m.color === 'blue') { %>
+      <div class="daily-box box-blue">
+        <%= m.memo %>
+      </div>
+
+    <% } else if (m.color === 'yellow') { %>
+      <div class="daily-box box-yellow">
+        <%= m.memo %>
+      </div>
+
+    <% } else { %>
+      <div class="daily-box box-white">
+        <%= m.memo %>
+      </div>
+    <% } %>
+
+  <% }) %>
+</div>
+
+</body>
+</html>

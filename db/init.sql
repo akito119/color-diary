@@ -1,0 +1,13 @@
+CREATE TABLE diary (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  date TEXT NOT NULL,
+  color TEXT NOT NULL,
+  memo TEXT,
+  is_deleted INTEGER NOT NULL DEFAULT 0
+);
+Create TABLE daily_color(
+  date TEXT NOT NULL PRIMARY KEY,
+  red_point INTEGER NOT NULL DEFAULT 0,
+  yellow_point INTEGER NOT NULL DEFAULT 0,
+  blue_point INTEGER NOT NULL DEFAULT 0
+)
