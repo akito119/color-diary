@@ -146,3 +146,22 @@
 .diary-form button:hover {
   background: #555;
 }
+.back-to-top {
+  position: fixed;
+  top: calc(20px + env(safe-area-inset-top));
+  left: 20px;
+
+  padding: 10px 16px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+}
+
+.back-to-top:hover {
+  background-color: #f0f0f0;
+}
